@@ -3,34 +3,41 @@
 import { BilingualText } from "@/components/bilingual-text";
 
 const specialties = [
-  { id: "Enterprise Systems", en: "Enterprise Systems" },
-  { id: "ERP & CRM", en: "ERP & CRM" },
-  { id: "Web & Mobile Flow", en: "Web & Mobile Flow" },
-  { id: "Backend & API", en: "Backend & API" },
+  { id: "ERP", en: "ERP" },
+  { id: "CRM", en: "CRM" },
+  { id: "API", en: "API" },
+  { id: "APP", en: "APP" },
 ];
 
 const highlights = [
   {
-    title: { id: "Sistem Terpusat", en: "Centralized Systems" },
+    title: { id: "Terpusat", en: "Centralized" },
     body: {
-      id: "Menyatukan dashboard admin, customer portal, mobile app, dan backend dalam satu alur kerja.",
-      en: "Connecting admin dashboards, customer portals, mobile apps, and backend services into one workflow.",
+      id: "Satu alur kerja.",
+      en: "One workflow.",
     },
   },
   {
-    title: { id: "Operational Ready", en: "Operational Ready" },
+    title: { id: "Rapi", en: "Structured" },
     body: {
-      id: "Dibangun untuk kebutuhan nyata seperti approval flow, reporting, inventory, dan tracking.",
-      en: "Built for real needs like approval flows, reporting, inventory, and tracking.",
+      id: "Siap dipakai tim.",
+      en: "Ready for teams.",
     },
   },
   {
-    title: { id: "Scalable Build", en: "Scalable Build" },
+    title: { id: "Scalable", en: "Scalable" },
     body: {
-      id: "Struktur sistem disiapkan agar aman untuk pengembangan berikutnya, bukan hanya cepat jadi.",
-      en: "Structured for future growth, not only for a fast first release.",
+      id: "Siap berkembang.",
+      en: "Built to grow.",
     },
   },
+];
+
+const orbitNodes = [
+  { label: "ERP", className: "orbit-node-a" },
+  { label: "CRM", className: "orbit-node-b" },
+  { label: "API", className: "orbit-node-c" },
+  { label: "WEB", className: "orbit-node-d" },
 ];
 
 export function HeroCinematic() {
@@ -40,6 +47,23 @@ export function HeroCinematic() {
       <div className="hero-board__glow hero-board__glow-a" />
       <div className="hero-board__glow hero-board__glow-b" />
       <div className="hero-board__grid" />
+      <div className="hero-orbit" aria-hidden="true">
+        <div className="hero-orbit__ring hero-orbit__ring-outer" />
+        <div className="hero-orbit__ring hero-orbit__ring-inner" />
+        <div className="hero-orbit__core">
+          <span>SYSTEM</span>
+        </div>
+        {orbitNodes.map((node) => (
+          <div key={node.label} className={`orbit-node ${node.className}`}>
+            <span>{node.label}</span>
+          </div>
+        ))}
+      </div>
+      <div className="hero-cubes" aria-hidden="true">
+        <span className="hero-cube hero-cube-a" />
+        <span className="hero-cube hero-cube-b" />
+        <span className="hero-cube hero-cube-c" />
+      </div>
 
       <div className="hero-board__frame">
         <div className="hero-board__topline">
@@ -62,7 +86,7 @@ export function HeroCinematic() {
 
         <div className="hero-board__headline">
           <span className="hero-board__title hero-board__title-main">HI, I&apos;M FERLY</span>
-          <span className="hero-board__title hero-board__title-sub">FULL STACK ENGINEER</span>
+          <span className="hero-board__title hero-board__title-sub">SYSTEMS ENGINEER</span>
         </div>
 
         <div className="hero-board__traces">

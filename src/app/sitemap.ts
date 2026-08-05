@@ -1,8 +1,8 @@
 import type { MetadataRoute } from "next";
-import { blogPosts, projects, services, siteConfig } from "@/data/site";
+import { projects, services, siteConfig } from "@/data/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/projects", "/services", "/blog", "/contact"].map(
+  const staticRoutes = ["", "/projects", "/services", "/contact"].map(
     (path) => ({
       url: `${siteConfig.domain}${path}`,
       lastModified: new Date(),
@@ -19,10 +19,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
   }));
 
-  const blogRoutes = blogPosts.map((post) => ({
-    url: `${siteConfig.domain}/blog#${post.slug}`,
-    lastModified: new Date(),
-  }));
-
-  return [...staticRoutes, ...projectRoutes, ...serviceRoutes, ...blogRoutes];
+  return [...staticRoutes, ...projectRoutes, ...serviceRoutes];
 }

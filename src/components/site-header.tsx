@@ -7,7 +7,6 @@ const navItems = [
   { href: "/", label: { id: "Beranda", en: "Home" } },
   { href: "/projects", label: { id: "Proyek", en: "Projects" } },
   { href: "/services", label: { id: "Layanan", en: "Services" } },
-  { href: "/blog", label: { id: "Blog", en: "Blog" } },
   { href: "/contact", label: { id: "Kontak", en: "Contact" } },
 ];
 

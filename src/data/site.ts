@@ -293,36 +293,6 @@ export const faqs = [
   },
 ];
 
-export const blogPosts = [
-  {
-    slug: "designing-enterprise-software-for-real-operations",
-    title: tx("Merancang Software Enterprise untuk Operasional Nyata", "Designing Enterprise Software for Real Operations"),
-    excerpt: tx(
-      "Artikel yang akan datang tentang bagaimana workflow offline yang kompleks bisa diterjemahkan menjadi software yang benar-benar ingin digunakan tim.",
-      "A future article on translating messy offline workflows into software that teams actually want to use.",
-    ),
-    status: tx("Segera hadir", "Coming soon"),
-  },
-  {
-    slug: "when-custom-erp-is-better-than-off-the-shelf-tools",
-    title: tx("Kapan ERP Custom Lebih Baik dari Tools Siap Pakai", "When Custom ERP Is Better Than Off-the-Shelf Tools"),
-    excerpt: tx(
-      "Artikel yang akan datang tentang biaya dari tools yang terfragmentasi dan bagaimana ERP custom bisa membuka kejelasan operasional.",
-      "A future article on the cost of fragmented tools and how bespoke ERP can unlock operational clarity.",
-    ),
-    status: tx("Segera hadir", "Coming soon"),
-  },
-  {
-    slug: "building-admin-dashboards-that-reduce-operator-error",
-    title: tx("Membangun Dashboard Admin yang Mengurangi Human Error", "Building Admin Dashboards That Reduce Operator Error"),
-    excerpt: tx(
-      "Artikel yang akan datang tentang pola interface untuk sistem internal kompleks yang membutuhkan kecepatan dan presisi.",
-      "A future article on interface patterns for complex internal systems that need speed and precision.",
-    ),
-    status: tx("Segera hadir", "Coming soon"),
-  },
-];
-
 export const projects = [
   {
     slug: "mnc-bank-cms",
