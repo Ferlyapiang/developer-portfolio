@@ -39,7 +39,7 @@ export function SiteHeader() {
         <div className="order-2 flex items-center gap-3 md:order-3">
           <LanguageToggle />
           <Link href="/contact" className="button-primary px-4 py-2">
-            <BilingualText text={{ id: "Hire Me", en: "Hire Me" }} />
+            <BilingualText text={{ id: "Hubungi Saya", en: "Hire Me" }} />
           </Link>
         </div>
       </div>

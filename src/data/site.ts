@@ -31,9 +31,26 @@ export const siteConfig = {
 };
 
 export const trustAreas = [
-  "Adhiratransejahtera",
-  "YogiGroup",
-  "SateTegalOrtega",
+  {
+    name: "Adhiratransejahtera",
+    logo: "/assets/ATSLogo.png",
+    short: "AT",
+  },
+  {
+    name: "Motion Bank",
+    logo: "/assets/motionbank.png",
+    short: "MB",
+  },
+  {
+    name: "YogiGroup",
+    logo: "/assets/yogi_group_logo.png",
+    short: "YG",
+  },
+  {
+    name: "SateTegalOrtega",
+    logo: "/assets/sateTegal.png",
+    short: "ST",
+  },
 ];
 
 export const services = [

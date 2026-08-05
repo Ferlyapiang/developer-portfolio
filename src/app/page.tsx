@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { BilingualText } from "@/components/bilingual-text";
 import { HeroCinematic } from "@/components/hero-cinematic";
@@ -18,16 +19,16 @@ const delayClasses = [
 ];
 
 const serviceBadges = [
-  "Enterprise",
-  "Custom",
-  "CRM",
-  "Centralized",
-  "Logistics",
-  "Backend",
-  "Frontend",
-  "Cloud",
-  "Application",
-  "AI",
+  { id: "Enterprise", en: "Enterprise" },
+  { id: "Kustom", en: "Custom" },
+  { id: "CRM", en: "CRM" },
+  { id: "Terpusat", en: "Centralized" },
+  { id: "Logistik", en: "Logistics" },
+  { id: "Backend", en: "Backend" },
+  { id: "Frontend", en: "Frontend" },
+  { id: "Cloud", en: "Cloud" },
+  { id: "Aplikasi", en: "Application" },
+  { id: "AI", en: "AI" },
 ];
 
 export default function Home() {
@@ -40,19 +41,19 @@ export default function Home() {
         <div className="hero-glow float-slower right-0 top-32" />
 
         <div className="grid gap-10 xl:grid-cols-[0.95fr_1.05fr] xl:items-center">
-          <div data-reveal>
-            <div className="reveal-up">
-            <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/74 pulse-border">
+          <div className="hero-copy" data-reveal>
+            <div className="hero-copy__inner reveal-up">
+            <div className="hero-copy__badge inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/74 pulse-border">
               <span className="h-2 w-2 rounded-full bg-emerald-400" />
               <BilingualText text={siteConfig.experience} />
             </div>
-            <h1 className="mt-8 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.06em] text-white sm:text-6xl lg:text-7xl">
+            <h1 className="hero-copy__title mt-8 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-[-0.06em] text-white sm:text-6xl lg:text-7xl">
               <BilingualText text={siteConfig.headline} />
             </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-white/70 sm:text-xl">
+            <p className="hero-copy__text mt-6 max-w-3xl text-lg leading-8 text-white/70 sm:text-xl">
               <BilingualText text={siteConfig.subheadline} />
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="hero-copy__actions mt-10 flex flex-wrap gap-4">
               <Link href="/projects" className="button-primary">
                 <BilingualText text={{ id: "Lihat Proyek", en: "View My Work" }} />
               </Link>
@@ -60,45 +61,9 @@ export default function Home() {
                 <BilingualText text={{ id: "Hubungi Saya", en: "Hire Me" }} />
               </Link>
             </div>
-
-            <div className="mt-10 grid gap-4 sm:grid-cols-3">
-              <div className="metric-card reveal-up reveal-delay-1">
-                <p className="metric-value">4+</p>
-                <p className="mt-2 text-sm text-white/60">
-                  <BilingualText text={{ id: "Tahun membangun sistem yang berjalan di production", en: "Years building systems that run in production" }} />
-                </p>
-              </div>
-              <div className="metric-card reveal-up reveal-delay-2">
-                <p className="metric-value">Multi-platform</p>
-                <p className="mt-2 text-sm text-white/60">
-                  <BilingualText text={{ id: "Web admin, customer portal, mobile, dan backend yang saling terhubung", en: "Admin web, customer portal, mobile, and backend working together" }} />
-                </p>
-              </div>
-              <div className="metric-card reveal-up reveal-delay-3">
-                <p className="metric-value">Consulting</p>
-                <p className="mt-2 text-sm text-white/60">
-                  <BilingualText text={{ id: "Dari arsitektur, pengembangan, hingga modernisasi sistem yang sudah ada", en: "From architecture and development to modernization of existing systems" }} />
-                </p>
-              </div>
-            </div>
             </div>
           </div>
           <HeroCinematic />
-        </div>
-      </section>
-
-      <section className="page-shell pb-8 section-shell section-shell-soft" data-reveal>
-        <div className="mb-4">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[var(--color-accent)]">
-            <BilingualText text={{ id: "Bekerja Sama Dengan", en: "Worked With" }} />
-          </p>
-        </div>
-        <div className="flex flex-wrap gap-3">
-          {trustAreas.map((item) => (
-            <div key={item} className="tag-chip">
-              {item}
-            </div>
-          ))}
         </div>
       </section>
 
@@ -129,10 +94,10 @@ export default function Home() {
               className={`section-card service-card ${delayClasses[index % 4]} rounded-[30px]`}
             >
               <p className="service-card__badge">
-                {serviceBadges[index]}
+                <BilingualText text={serviceBadges[index]} />
               </p>
               <div className="service-card__orb" aria-hidden="true">
-                <span>{serviceBadges[index].slice(0, 2)}</span>
+                <span>{serviceBadges[index].en.slice(0, 2)}</span>
               </div>
               <p className="text-lg font-semibold text-white">
                 <BilingualText text={service.title} />
@@ -147,6 +112,45 @@ export default function Home() {
                   </span>
                 ))}
               </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="page-shell pb-8 section-shell section-shell-soft" data-reveal>
+        <SectionHeading
+          eyebrow={{ id: "Bekerja Sama Dengan", en: "Worked With" }}
+          title={{
+            id: "Beberapa brand yang pernah saya kerjakan.",
+            en: "Some of the brands I have worked with.",
+          }}
+          description={{
+            id: "Ringkas dan langsung terlihat.",
+            en: "Concise and immediately visible.",
+          }}
+        />
+        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {trustAreas.map((item, index) => (
+            <div
+              key={item.name}
+              className={`section-card partner-card ${delayClasses[index % 4]} rounded-[30px]`}
+            >
+              <p className="partner-card__badge">
+                <BilingualText text={{ id: "Partner", en: "Partner" }} />
+              </p>
+              <div className="partner-card__mark" aria-hidden="true">
+                <span>{item.short}</span>
+              </div>
+              <div className="partner-card__image-wrap">
+                <Image
+                  src={item.logo}
+                  alt={item.name}
+                  fill
+                  sizes="(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 28vw"
+                  className="partner-card__image"
+                />
+              </div>
+              <p className="partner-card__name">{item.name}</p>
             </div>
           ))}
         </div>
